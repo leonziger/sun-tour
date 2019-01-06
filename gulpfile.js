@@ -12,22 +12,26 @@ const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
 const del = require('del');
 const gutil = require('gulp-util');
-const pug = require('gulp-pug');
 const spritesmith = require('gulp.spritesmith');
 const tinypng = require('gulp-tinypng-nokey');
 const bro = require('gulp-bro');
 const babelify = require('babelify');
 const uglify = require('gulp-uglify');
+const panini = require('panini');
+const htmlmin = require('gulp-htmlmin');
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
+gulp.task('views', function() {
+  panini.refresh();
 
-gulp.task('views', function buildHTML() {
-  return gulp.src('./src/index.pug')
-    .pipe(pug())
-    .on('error', function(error) {
-      gutil.log(gutil.colors.red('Error: ' + error.message));
-      this.emit('end');
-    })
+  return gulp.src('./src/pages/**/*.html')
+    .pipe(panini({
+        root: './src/pages',
+        layouts: './src/layouts',
+        partials: './src/components',
+        data: './src/data'
+    }))
+    .pipe(gulpIf(isDevelopment, htmlmin({ collapseWhitespace: false })))
     .pipe(gulp.dest('./public'));
 });
 
@@ -118,7 +122,7 @@ gulp.task('db', function () {
 
 gulp.task('watch', function () {
   gulp.watch('./src/db/*.json', gulp.series('db'));
-  gulp.watch('./src/**/*.pug', gulp.series('views'));
+  gulp.watch('./src/**/*.html', gulp.series('views'));
   gulp.watch('./src/**/*.js', gulp.series('scripts'));
   gulp.watch('./src/**/*.{css,scss}', gulp.series('styles'));
   gulp.watch(['./src/assets/images/**/*.*', '!./src/assets/images/sprite/*.*'], gulp.series('images'));

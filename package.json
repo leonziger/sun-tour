@@ -43,9 +43,11 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
     "gulp.spritesmith": "^6.5.1",
+    "panini": "^1.6.3",
     "vinyl-buffer": "^1.0.0"
   },
   "dependencies": {
+    "gulp-htmlmin": "^5.0.1",
     "jquery": "^3.3.1"
   }
 }
