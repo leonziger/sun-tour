@@ -1,0 +1,18 @@
+.social-media {
+  display: flex;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.social-media__item + .social-media__item {
+  padding-left: 10px;
+}
