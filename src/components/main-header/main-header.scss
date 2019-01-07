@@ -43,6 +43,11 @@
     padding-left: 95px;
     flex-wrap: wrap;
 
+    @media(max-width: 590px) {
+      justify-content: center;
+      flex-direction: column;
+    }
+
 
     @media(max-width: 600px) {
       padding-left: 20px;
@@ -53,7 +58,7 @@
       color: #ffffff;
       font-size: 30px;
       font-weight: 400;
-
+      white-space: nowrap;
     }
 
     &-link {
