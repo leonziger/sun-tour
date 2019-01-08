@@ -12,6 +12,7 @@
 
   &__logo {
     display: flex;
+    padding-right: 10px;
 
     &-icon {
       align-self: center;
@@ -43,14 +44,14 @@
     padding-left: 95px;
     flex-wrap: wrap;
 
-    @media(max-width: 590px) {
-      justify-content: center;
-      flex-direction: column;
+    @media(max-width: 900px) {
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
-
-    @media(max-width: 600px) {
-      padding-left: 20px;
+    @media(max-width: 720px) {
+      justify-content: center;
+      flex-direction: column;
     }
 
     &-phone {
@@ -59,6 +60,10 @@
       font-size: 30px;
       font-weight: 400;
       white-space: nowrap;
+
+      @media(max-width: 480px) {
+        font-size: 24px;
+      }
     }
 
     &-link {
@@ -70,18 +75,28 @@
       text-decoration: none;
       border-bottom: 1px dashed #ffffff;
       margin-left: 35px;
-      padding: 5px 0;
 
       &:hover {
         opacity: 0.8;
       }
 
+      @media(max-width: 720px) {
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 5px;
+      }
+
+      @media(max-width: 480px) {
+        font-size: 16px;
+      }
     }
 
   }
 
   &__soc-media {
     display: flex;
+    padding-left: 10px;
 
     @media(max-width: 600px) {
       display: none;
