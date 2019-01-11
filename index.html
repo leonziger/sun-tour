@@ -15,10 +15,10 @@
             </a>
             <div class="main-header__logo-slogan">Сеть турагенств «Солнце в кругу»</div>
         </div>
-        <div class="main-header__callback">
-            <div class="main-header__callback-phone">044 123-45-67</div>
+        <a class="main-header__callback">
+            <a class="main-header__callback-phone" href="tel:044 123-45-67">044 123-45-67</a>
             <a href="#" class="main-header__callback-link">обратный звонок</a>
-        </div>
+        </a></div>
         <div class="main-header__soc-media">
             <div class="social-media">
                 <a href="#" class="social-media__item">
@@ -37,7 +37,7 @@
                 <span></span>
             </div>
         </div>
-    </div>
+    
 </header>
 
 
@@ -241,7 +241,18 @@
             </div>
         </div>
     </div>
-</footer>
+</footer><script type="text/html" data-modal="callback">
+    <div class="modal" id="modal-callback">
+        <div class="modal__content callback">
+            <div class="modal__title">Перезвоните мне</div>
+            <form class="callback__form">
+                <label class="callback__label" for="callback-phone">Номер телефона</label>
+                <input class="callback__phone" id="callback-phone" placeholder="+38(0__) ___ - __ - __" />
+                <button class="button callback__submit">Перезвоните мне</button>
+            </form>
+        </div>
+    </div>
+</script>
 
 </body>
 </html>
