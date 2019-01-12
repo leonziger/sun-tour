@@ -60,6 +60,11 @@
       font-size: 30px;
       font-weight: 400;
       white-space: nowrap;
+      text-decoration: none;
+
+      @media(max-width: 600px) {
+        color: yellow;
+      }
 
       @media(max-width: 480px) {
         font-size: 24px;
