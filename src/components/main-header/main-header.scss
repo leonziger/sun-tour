@@ -3,6 +3,22 @@
   align-items: center;
   min-height: 105px;
   background-color: #00bff3;
+  /* added for sticky_menu */
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: $delay;
+
+  @media(max-width: 600px) {
+    min-height: 60px;
+  }
+
+  &_sticky {
+    background: darken(#00bff3,5%);
+    min-height: 60px;
+  }
 
   &__container {
     display: flex;
@@ -47,6 +63,7 @@
     @media(max-width: 900px) {
       padding-left: 10px;
       padding-right: 10px;
+      padding-top: 0;
     }
 
     @media(max-width: 720px) {
@@ -108,7 +125,4 @@
     }
   }
 
-  &__menu-toggle {
-    display: none;
-  }
 }

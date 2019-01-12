@@ -1,0 +1,28 @@
+.button {
+  padding: 18px 42px;
+  color: white;
+  background-color: #00bff3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $delay;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24.89px;
+  letter-spacing: -0.34px;
+  border-radius: 5px;
+
+  &:hover {
+    background: darken(#00bff3,15%);
+  }
+
+  &__icon{
+    margin-right: 13px;
+  }
+}

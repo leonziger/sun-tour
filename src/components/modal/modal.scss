@@ -84,8 +84,9 @@
     }
 
     &:hover{
+
       &:before, &:after{
-        background: #ff8900;
+        background: yellow;
       }
     }
 

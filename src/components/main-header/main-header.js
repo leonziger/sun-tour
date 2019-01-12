@@ -5,7 +5,6 @@ import callback from '../callback/callback';
 
 $('.main-header__callback-link').click(function (e) {
     e.preventDefault();
-    console.log('.main-header__callback-link clicked');
     const modal = $(`[data-modal=callback]`);
 
     if (!modal.length) {
