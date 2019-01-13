@@ -54,71 +54,71 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('./src/app.js')
-        .pipe(bro({
-            debug: isDevelopment,
-            transform: [
-                babelify.configure({ presets: ['es2015'] }),
-            ]
-        }))
-        .pipe(gulpIf(!isDevelopment, uglify()))
-        .pipe(rename('bundle.js'))
-        .pipe(gulp.dest('./public/js'));
+  return gulp.src('./src/app.js')
+    .pipe(bro({
+      debug: isDevelopment,
+      transform: [
+        babelify.configure({ presets: ['es2015'] }),
+      ]
+    }))
+    .pipe(gulpIf(!isDevelopment, uglify()))
+    .pipe(rename('bundle.js'))
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('fonts', function () {
-    return gulp.src([
-        './src/assets/fonts/**/*.*',
-        './node_modules/font-awesome/fonts/**/*.*'
-    ])
-        .pipe(gulp.dest('./public/fonts'));
+  return gulp.src([
+    './src/assets/fonts/**/*.*',
+    './node_modules/font-awesome/fonts/**/*.*'
+  ])
+    .pipe(gulp.dest('./public/fonts'));
 });
 
 gulp.task('images', function () {
-    return gulp.src(['./src/assets/images/**/*.*', '!./src/assets/images/sprite/*.*'])
-        .pipe(gulpIf(!isDevelopment, tinypng()))
-        .pipe(gulp.dest('./public/images'));
+  return gulp.src(['./src/assets/images/**/*.*', '!./src/assets/images/sprite/*.*'])
+    .pipe(gulpIf(!isDevelopment, tinypng()))
+    .pipe(gulp.dest('./public/images'));
 });
 
 gulp.task('sprite', function() {
-    const spriteData = gulp.src('./src/assets/images/sprite/*.png')
-        .pipe(spritesmith({
-            imgName: 'sprite.png',
-            cssName: 'sprite-images.scss',
-            algorithm: 'binary-tree',
-            padding: 2,
-            cssTemplate: './src/components/sprite/sprite-template.mustache'
-        }));
+  const spriteData = gulp.src('./src/assets/images/sprite/*.png')
+    .pipe(spritesmith({
+      imgName: 'sprite.png',
+      cssName: 'sprite-images.scss',
+      algorithm: 'binary-tree',
+      padding: 2,
+      cssTemplate: './src/components/sprite/sprite-template.mustache'
+    }));
 
-    spriteData.img
-        .pipe(buffer())
-        .pipe(gulpIf(!isDevelopment, tinypng()))
-        .pipe(gulp.dest('./public/images'));
+  spriteData.img
+    .pipe(buffer())
+    .pipe(gulpIf(!isDevelopment, tinypng()))
+    .pipe(gulp.dest('./public/images'));
 
-    spriteData.css.pipe(gulp.dest('./src/components/sprite'));
+  spriteData.css.pipe(gulp.dest('./src/components/sprite'));
 
-    return spriteData;
+  return spriteData;
 });
 
 gulp.task('svgSymbols', function () {
-    return gulp.src('./src/assets/images/svg/**/*.svg')
-        .pipe(svgmin())
-        .pipe(svgSymbols({
-            templates: ['default-svg'],
-            class: '.icon_%f'
-        }))
-        .pipe(gulp.dest('./public'));
+  return gulp.src('./src/assets/images/svg/**/*.svg')
+    .pipe(svgmin())
+    .pipe(svgSymbols({
+      templates: ['default-svg'],
+      class: '.icon_%f'
+    }))
+    .pipe(gulp.dest('./public'));
 });
 
 gulp.task('misc', function () {
-    return gulp.src('./src/assets/misc/**/*.*')
-        .pipe(gulp.dest('./public'));
+  return gulp.src('./src/assets/misc/**/*.*')
+    .pipe(gulp.dest('./public'));
 });
 
 
 gulp.task('db', function () {
-    return gulp.src('./src/db/**/*.json')
-        .pipe(gulp.dest('./public/db'));
+  return gulp.src('./src/db/**/*.json')
+    .pipe(gulp.dest('./public/db'));
 });
 
 gulp.task('watch', function () {
@@ -132,34 +132,34 @@ gulp.task('watch', function () {
 });
 
 gulp.task('serve', function () {
-    browserSync.init({
-        server: './public',
-        port: 8080
-    });
+  browserSync.init({
+    server: './public',
+    port: 8080
+  });
 
-    browserSync.watch('./public/**/*.*').on('change', browserSync.reload);
+  browserSync.watch('./public/**/*.*').on('change', browserSync.reload);
 });
 
 gulp.task('clean', function () {
-    return del('./public')
+  return del('./public')
 });
 
 gulp.task('build', gulp.series(
-    'clean',
-    'sprite',
-    'svgSymbols',
-    gulp.parallel(
-        'views',
-        'styles',
-        'scripts',
-        'fonts',
-        'images',
-        'misc'
-    )));
+  'clean',
+  'sprite',
+  'svgSymbols',
+  gulp.parallel(
+    'views',
+    'styles',
+    'scripts',
+    'fonts',
+    'images',
+    'misc'
+  )));
 
 gulp.task('default', gulp.series(
-    'build',
-    gulp.parallel(
-        'watch',
-        'serve'
-    )));
+  'build',
+  gulp.parallel(
+    'watch',
+    'serve'
+  )));
