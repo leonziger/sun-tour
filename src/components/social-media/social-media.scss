@@ -11,6 +11,12 @@
       opacity: 0.5;
     }
   }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+
 }
 
 .social-media__item + .social-media__item {

@@ -1,4 +1,4 @@
-.news {
+.offers {
   padding-bottom: 24px;
 
   &__list {
@@ -35,7 +35,7 @@
 
   &__title {
     color: #000000;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 700;
     line-height: 30px;
@@ -43,6 +43,13 @@
     border-bottom: 1px solid gray;
     padding-bottom: 2px;
     margin-bottom: 10px;
+    text-decoration: none;
+    transition: $delay;
+
+    &:hover {
+      color: #CB0000;
+      border-bottom: 1px solid #CB0000;
+    }
 
     @media(max-width: 600px) {
       font-size: 26px;

@@ -126,8 +126,17 @@
     &-rating {
       display: flex;
       align-items: center;
-      padding: 0 35px;
+      padding: 0 13px;
       margin-top: -10px;
+
+      &__icon {
+        width: 27px;
+        height: 26px;
+
+        &_filled{
+          fill: #FF9900;
+        }
+      }
 
       @media(max-width: 992px) {
         padding: 0;
