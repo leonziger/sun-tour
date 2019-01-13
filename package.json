@@ -41,9 +41,7 @@
     "gulp-svgmin": "^1.2.4",
     "gulp-tinypng-nokey": "^1.0.4",
     "gulp-uglify": "^3.0.0",
-    "gulp.spritesmith": "^6.5.1",
-    "panini": "^1.6.3",
-    "vinyl-buffer": "^1.0.0"
+    "panini": "^1.6.3"
   },
   "dependencies": {
     "gulp-htmlmin": "^5.0.1",
