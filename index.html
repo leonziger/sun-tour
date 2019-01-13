@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <script defer="defer" src="js/bundle.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <header class="main-header">
     <div class="container main-header__container">
         <div class="main-header__logo">
-            <a href="#" class="main-header__logo-icon">
+            <a href="/"  class="main-header__logo-icon">
                 <img src="./images/logo-top.png" alt="">
             </a>
             <h1 class="main-header__logo-slogan">Сеть турагенств «Солнце в кругу»</h1>
@@ -23,13 +23,19 @@
         <div class="main-header__soc-media">
             <div class="social-media">
                 <a href="#" class="social-media__item">
-                    <img src="./images/facebook.svg" alt="">
+                    <svg class="icon icon_facebook_top social-media__icon">
+                        <use xlink:href="svg-symbols.svg#facebook_top"></use>
+                    </svg>
                 </a>
                 <a href="#" class="social-media__item">
-                    <img src="./images/googleplus.svg" alt="">
+                    <svg class="icon icon_googleplus_top social-media__icon">
+                        <use xlink:href="svg-symbols.svg#googleplus_top"></use>
+                    </svg>
                 </a>
                 <a href="#" class="social-media__item">
-                    <img src="./images/instagram.svg" alt="">
+                    <svg class="icon icon_instagram_top social-media__icon">
+                        <use xlink:href="svg-symbols.svg#instagram_top"></use>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -38,7 +44,7 @@
 
 
 <div class="main-banner">
-    <div class="container main-banner__container">
+    <div class="main-banner__container">
         <div class="main-banner__hotel-image">
             <div class="main-banner__ad">
                 <div class="main-banner__ad-title">Тур в Созополь, Болгария</div>
@@ -53,9 +59,21 @@
                 <div class="main-banner__hotel-info-top">
                     <div class="main-banner__hotel-title">Aquamarine hotel</div>
                     <div class="main-banner__hotel-rating">
-                        <img src="./images/star.png" alt="">
-                        <img src="./images/star.png" alt="">
-                        <img src="./images/star.png" alt="">
+                        <svg class="icon icon_star_filled main-banner__hotel-rating__icon main-banner__hotel-rating__icon_filled">
+                            <use xlink:href="svg-symbols.svg#star_filled"></use>
+                        </svg>
+                        <svg class="icon icon_star_filled main-banner__hotel-rating__icon main-banner__hotel-rating__icon_filled">
+                            <use xlink:href="svg-symbols.svg#star_filled"></use>
+                        </svg>
+                        <svg class="icon icon_star_filled main-banner__hotel-rating__icon main-banner__hotel-rating__icon_filled">
+                            <use xlink:href="svg-symbols.svg#star_filled"></use>
+                        </svg>
+                        <svg class="icon icon_star main-banner__hotel-rating__icon">
+                            <use xlink:href="svg-symbols.svg#star"></use>
+                        </svg>
+                        <svg class="icon icon_star main-banner__hotel-rating__icon">
+                            <use xlink:href="svg-symbols.svg#star"></use>
+                        </svg>
                     </div>
                     <div class="main-banner__hotel-price">$256</div>
                 </div>
@@ -76,7 +94,7 @@
                         </li>
                         <li class="main-banner__hotel-item">
                             <div class="main-banner__hotel-item-title">Сервис</div>
-                            <div class="main-banner__hotel-item-value">7.9</div>
+                            <div class="main-banner__hotel-item-value">7,9</div>
                         </li>
                         <li class="main-banner__hotel-item">
                             <div class="main-banner__hotel-item-title">Инфраструктура</div>
@@ -97,9 +115,9 @@
     <div class="container">
         <div class="offers__list">
             <div class="offers__item">
-                <img src="./images/new1.jpg" alt="" class="offers__image">
+                <img src="./images/offer1.jpg" alt="" class="offers__image">
                 <div class="offers__top-info">
-                    <a class="offers__link">Шелковый путь</a>
+                    <a href="#" class="offers__title">Шелковый путь</a>
                     <div class="offers__price">$987</div>
                 </div>
                 <div class="offers__bottom-info">
@@ -108,9 +126,9 @@
                 </div>
             </div>
             <div class="offers__item">
-                <img src="./images/new2.jpg" alt="" class="offers__image">
+                <img src="./images/offer2.jpg" alt="" class="offers__image">
                 <div class="offers__top-info">
-                    <a class="offers__link">Не дай Бог не любишь</a>
+                    <a href="#" class="offers__title">Не дай Бог не любишь</a>
                     <div class="offers__price">$59</div>
                 </div>
                 <div class="offers__bottom-info">
@@ -120,9 +138,9 @@
             </div>
         </div>
     </div>
-</div><section class="main-content">
+</div><div class="main-content">
     <div class="container">
-        <h1 class="main-content__headline">36,6 градусов по цельсию и познавательная физика</h1>
+        <h2 class="main-content__headline">36,6 градусов по цельсию и познавательная физика</h2>
         <div class="main-content__container">
             <div class="main-content__left">
                 <p class="main-content__contrast">
@@ -137,8 +155,8 @@
                 <p class="main-content__indent">Что интересно, все теплокровные функционируют в пределах той же области температур что и человек.
                     Например температура у лошадей 37,5-38,5; у коров 37,5-39,5; кур 40,5-42,5; свиней 39,0-40,0; кошек 38,0-39,5; обезьян 38,1; голубей 41,0-44,0. Ответ лежит в области нет, не биологии. А в области физики воды.</p>
 
-                <blockquote class="main-content__citation">Дело в том, что теплоемкость воды нелинейно зависит от температуры. Теплоемкость это количество энергии, которое необходимо потратить для того что бы нагреть 1 кг вещества на 1 градус. При увеличении температуры она как бы пикирует как штурмовик, и возносится ввысь после прохождения нижней точки
-                    в 36,8 градусов Цельсия. В организме человека вода составляет около 65-70%, её теплоемкость огромна.</blockquote>
+                <p class="main-content__citation">Дело в том, что теплоемкость воды нелинейно зависит от температуры. Теплоемкость это количество энергии, которое необходимо потратить для того что бы нагреть 1 кг вещества на 1 градус. При увеличении температуры она как бы пикирует как штурмовик, и возносится ввысь после прохождения нижней точки
+                    в 36,8 градусов Цельсия. В организме человека вода составляет около 65-70%, её теплоемкость огромна.</p>
 
                 <p class="main-content__indent">90% энергии получаемой с пищей, теплокровные потому тратят только лишь на поддержание постоянной
                     температуры внутренней среды. На нагревание воды. Потому эта ямка, минимум, в котором нужно было
@@ -203,14 +221,14 @@
 
                 <p class="main-content__indent">
                     Как найти эти консервативные признаки? Наиболее часто рассматривают 5 источников информации о них:
-                    </p><ul class="main-content__list">
+                    <ul class="main-content__list">
                         <li class="main-content__item">эмбриологические исследования;</li>
                         <li class="main-content__item">тератологические данные;</li>
                         <li class="main-content__item">сравнительно-морфологические данные;</li>
                         <li class="main-content__item">анализ врожденных поведенческих программ (этологические данные);</li>
                         <li class="main-content__item">изучение взаимосвязи с другими видами.</li>
                     </ul>
-                <p></p>
+                </p>
             </div>
             <aside class="main-content__right">
                 <div class="main-content__right-title">0,71</div>
@@ -220,19 +238,25 @@
         </div>
 
     </div>
-</section><footer class="main-footer">
+</div><footer class="main-footer">
     <div class="container main-footer__container">
         <div class="main-footer__copyright">Тестовое задание на вакансию верстальщика в компанию &nbsp;<a href="#">Aweb</a></div>
         <div class="main-footer__soc-media">
             <div class="social-media">
                 <a href="#" class="social-media__item">
-                    <img src="./images/facebook.svg" alt="">
+                    <svg class="icon icon_facebook_bottom social-media__icon">
+                        <use xlink:href="svg-symbols.svg#facebook_bottom"></use>
+                    </svg>
                 </a>
                 <a href="#" class="social-media__item">
-                    <img src="./images/googleplus.svg" alt="">
+                    <svg class="icon icon_googleplus_bottom social-media__icon">
+                        <use xlink:href="svg-symbols.svg#googleplus_bottom"></use>
+                    </svg>
                 </a>
                 <a href="#" class="social-media__item">
-                    <img src="./images/instagram.svg" alt="">
+                    <svg class="icon icon_instagram_bottom social-media__icon">
+                        <use xlink:href="svg-symbols.svg#instagram_bottom"></use>
+                    </svg>
                 </a>
             </div>
         </div>
