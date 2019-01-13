@@ -11,7 +11,6 @@ const svgSymbols = require('gulp-svg-symbols');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
 const del = require('del');
-const gutil = require('gulp-util');
 const spritesmith = require('gulp.spritesmith');
 const tinypng = require('gulp-tinypng-nokey');
 const bro = require('gulp-bro');
@@ -24,14 +23,18 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 gulp.task('views', function() {
   panini.refresh();
 
-  return gulp.src('./src/pages/**/*.html')
+  return gulp.src('./src/pages/**/*.{hbs,html}')
     .pipe(panini({
         root: './src/pages',
         layouts: './src/layouts',
         partials: './src/components',
         data: './src/data'
     }))
-    .pipe(gulpIf(isDevelopment, htmlmin({ collapseWhitespace: false })))
+    .pipe(rename({ extname: '.html' }))
+    .pipe(gulpIf(!isDevelopment, htmlmin({
+      collapseWhitespace: true,
+      minifyJS: true
+    })))
     .pipe(gulp.dest('./public'));
 });
 
@@ -39,8 +42,6 @@ gulp.task('styles', function () {
   return gulp.src('./src/app.scss')
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    // .pipe(csslint())
-    // .pipe(csslint.formatter())
     .pipe(gulpIf(!isDevelopment, postcss([
       autoprefixer({
         browsers: ['> 5%', 'ff > 14']
@@ -122,7 +123,7 @@ gulp.task('db', function () {
 
 gulp.task('watch', function () {
   gulp.watch('./src/db/*.json', gulp.series('db'));
-  gulp.watch('./src/**/*.html', gulp.series('views'));
+  gulp.watch('./src/**/*.{hbs,html}', gulp.series('views'));
   gulp.watch('./src/**/*.js', gulp.series('scripts'));
   gulp.watch('./src/**/*.{css,scss}', gulp.series('styles'));
   gulp.watch(['./src/assets/images/**/*.*', '!./src/assets/images/sprite/*.*'], gulp.series('images'));
