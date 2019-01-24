@@ -1,15 +1,15 @@
 {
-  "name": "sun-tour",
+  "name": "warm-floor",
   "version": "0.1.0",
   "author": "Leonid Zichkov",
   "private": true,
-  "homepage": "https://leonziger.github.io/sun-tour",
+  "homepage": "https://leonziger.github.io/warm-floor",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leonziger/sun-tour.git"
+    "url": "git+https://github.com/leonziger/warm-floor.git"
   },
   "bugs": {
-    "url": "https://github.com/leonziger/sun-tour/issues"
+    "url": "https://github.com/leonziger/warm-floor/issues"
   },
   "scripts": {
     "start": "gulp",
